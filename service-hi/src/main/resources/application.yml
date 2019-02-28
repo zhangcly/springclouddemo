@@ -1,0 +1,31 @@
+server:
+  port: 8764
+
+spring:
+  application:
+    name: service-offer
+
+eureka:
+  client:
+    serviceUrl:
+#      defaultZone: http://admin:pwd@localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    #这是暴露IP给服务注册中心,不设置的话暴露的是hostname
+    perfer-ip-address: true
+    metadata-map:
+      mydata: this-is-my-data
+#info:
+#  app:
+#    name: @project.artifactId@
+#    encoding: @project.build.sourceEncoding@
+#    java:
+#      source: @java.version@
+#      target: @java.version@
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: health,info,env
+#    health:
+#      show-details: always

@@ -1,0 +1,14 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: serviceturbine
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+turbine:
+  app-config: service-ribbon,service-consumer
+  cluster-name-expression: "'default'"

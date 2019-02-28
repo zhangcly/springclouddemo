@@ -1,0 +1,26 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8766
+spring:
+  application:
+    name: service-consumer
+#service-hi:
+#  ribbon:
+##    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+#    listOfServers: localhost:8763,localhost:8764
+feign:
+  hystrix:
+    enabled: true
+logging:
+  level:
+    com.jsyl.serviceribbon.feign.ServicehiFeignClient: DEBUG
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env,hystrix.stream
+    health:
+      show-details: always
